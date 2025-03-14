@@ -43,7 +43,22 @@ INSTALLED_APPS = [
     'courses.apps.CoursesConfig',
     'ckeditor',
     'ckeditor_uploader',
+    'rest_framework',
+    'drf_yasg',
+
 ]
+
+import cloudinary
+import cloudinary.uploader
+from cloudinary.utils import cloudinary_url
+
+# Configuration
+cloudinary.config(
+    cloud_name = "ds05mb5xf",
+    api_key = "129254722258642",
+    api_secret = "OQScAUMjqFmA3g6gog1GfBRCM14", # Click 'View API Keys' above to copy your API secret
+    secure=True
+)
 
 CKEDITOR_UPLOAD_PATH = "ckeditor/lessons/"
 
@@ -87,7 +102,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'coursedb',
         'USER': 'root',
-        'PASSWORD': 'ThanhNam*1909',
+        # 'PASSWORD': 'ThanhNam*1909',
+        'PASSWORD': 'root',
         'HOST': ''  # mặc định localhost
     }
 }

@@ -2,12 +2,12 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from ckeditor.fields import RichTextField
 from django.db.models import CASCADE
-
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
 class User(AbstractUser):
-    pass
+    avatar=CloudinaryField(null=True)
 
 class BaseModel(models.Model): #khi có models.Model thì class sẽ thành enetity class(một model trong Django ORM) - > khi chạy sẽ tạo table trong DB
     active=models.BooleanField(default=True)
@@ -26,7 +26,7 @@ class Category(BaseModel):
 class Course(BaseModel):
     subject= models.CharField(max_length=255)
     description=models.TextField(null=True)
-    image= models.ImageField(upload_to='courses/%Y/%m',null=True,blank=True)
+    image= CloudinaryField()
     category= models.ForeignKey(Category, on_delete=models.PROTECT)
 
     def __str__(self):
@@ -38,7 +38,7 @@ class Course(BaseModel):
 class Lesson(BaseModel):
     subject= models.CharField(max_length=255)
     content=RichTextField(null=True)
-    image= models.ImageField(upload_to='lessons/%Y/%m',null=True)
+    image= CloudinaryField()
     course= models.ForeignKey(Course, on_delete=models.CASCADE)
     tags=models.ManyToManyField('Tag')
 

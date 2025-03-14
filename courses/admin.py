@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.template.response import TemplateResponse
 from django.utils.safestring import mark_safe
 
-from courses.models import Category,Course,Lesson,Tag
+from courses.models import Category,Course,Lesson,Tag,Comment
 from django.urls import path
 from django.db.models import Count
 
@@ -51,6 +51,8 @@ admin_site=MyAdminSite(name='ecourse')
 # Register your models here.
 admin_site.register(Category)
 admin_site.register(Course)
+admin_site.register(Comment)
 admin_site.register(Lesson,MyLessionAdmin)
 admin_site.register(Tag)
+
 

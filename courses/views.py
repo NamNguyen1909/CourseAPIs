@@ -44,13 +44,13 @@ class LessonViewSet(viewsets.ViewSet, generics.RetrieveAPIView):
     queryset = Lesson.objects.prefetch_related('tags').filter(active=True)
     serializer_class = serializers.LessonDetailsSerializer
 
-    # @action(methods=['get'], detail=True, url_path='comments')
-    # def get_comments(self, request, pk):
-    #     comments = self.get_object().comment_set.select_related('user').filter(active=True)
-    #     return Response(serializers.CommentSerializer(comments, many=True).data, status=status.HTTP_200_OK)
+    @action(methods=['get'], detail=True, url_path='comments')
+    def get_comments(self, request, pk):
+        comments = self.get_object().comment_set.select_related('user').filter(active=True)
+        return Response(serializers.CommentSerializer(comments, many=True).data, status=status.HTTP_200_OK)
 
-#
-# class UserViewSet(viewsets.ViewSet, generics.CreateAPIView):
-#     queryset = User.objects.filter(is_active=True)
-#     serializer_class = serializers.UserSerializer
-#     parser_classes = [parsers.MultiPartParser, ]
+
+class UserViewSet(viewsets.ViewSet, generics.CreateAPIView):
+    queryset = User.objects.filter(is_active=True)
+    serializer_class = serializers.UserSerializer
+    parser_classes = [parsers.MultiPartParser]

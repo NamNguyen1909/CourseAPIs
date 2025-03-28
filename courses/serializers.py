@@ -43,8 +43,8 @@ class LessonDetailsSerializer(LessonSerializer):
 class UserSerializer(ModelSerializer):
     def to_representation(self, instance):
         data = super().to_representation(instance)
-        if instance.avatar: # and instance.image.name.startswith('image/upload/')
-            data['avatar'] = instance.avatar.url
+        data['avatar'] = instance.avatar.url if instance.avatar else ""
+
         return data
 
     class Meta:
@@ -67,8 +67,18 @@ class UserSerializer(ModelSerializer):
 
 
 class CommentSerializer(ModelSerializer):
-    user = UserSerializer()
+    # user = UserSerializer()
+
+    def to_representation(self, instance): # chỉ ảnh hưởng serializer
+        data= super().to_representation(instance)
+        data['user']=UserSerializer(instance.user)
+        return data
 
     class Meta:
         model = Comment
-        fields = ['id', 'user', 'content', 'created_date','user']
+        fields = ['id', 'content', 'created_date','user','lesson']
+        extra_kwargs={
+            'lesson': {
+                'write_only':True
+            }
+        }

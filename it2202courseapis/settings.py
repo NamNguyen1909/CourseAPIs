@@ -111,8 +111,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'coursedb',
         'USER': 'root',
-        # 'PASSWORD': 'ThanhNam*1909',
-        'PASSWORD': 'root',
+        'PASSWORD': 'ThanhNam*1909',
+        # 'PASSWORD': 'root',
         'HOST': ''  # mặc định localhost
     }
 }
@@ -162,9 +162,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CLIENT_ID="maxFpFyIvknFpCsrIBLQj8jl9wlUZXiSRu3lmwbS"
-CLIENT_SECRET="riJrlTJZ9ScyIrO4vVLruBrA8Rp4hGt54D9YGsjeHRGb8l3sd1zjCqnLDDy85KbFn0njwUKDFKufwNkh8ghloBCeg2EKwupVdBQtTj3DPGwf3CXmuBX4fp74In12j5E6"
+# CLIENT_ID="maxFpFyIvknFpCsrIBLQj8jl9wlUZXiSRu3lmwbS"
+# CLIENT_SECRET="riJrlTJZ9ScyIrO4vVLruBrA8Rp4hGt54D9YGsjeHRGb8l3sd1zjCqnLDDy85KbFn0njwUKDFKufwNkh8ghloBCeg2EKwupVdBQtTj3DPGwf3CXmuBX4fp74In12j5E6"
 
+CLIENT_ID="7I9P1esUERPnkyGE2JTlwk03WBEXGOPSKYtFKbUK"
+CLIENT_SECRET="u42Wwafiyz2yOpgZkhA96bbZ3dfXAQSms2PQnc4kuGsfNwuqnbtX2bAO2mcUvWszOyqvWSMD9e3h0lE3DcmL8BGFb2jwo4rj2zdwmDmQgbTu64ZW0UNTH7ZQLfTBCd97"
 # POST http://127.0.0.1:8000/o/token/
 # {
 #     "username": "admin",
@@ -172,6 +174,6 @@ CLIENT_SECRET="riJrlTJZ9ScyIrO4vVLruBrA8Rp4hGt54D9YGsjeHRGb8l3sd1zjCqnLDDy85KbFn
 #     "client_id":"maxFpFyIvknFpCsrIBLQj8jl9wlUZXiSRu3lmwbS",
 #     "client_secret":"riJrlTJZ9ScyIrO4vVLruBrA8Rp4hGt54D9YGsjeHRGb8l3sd1zjCqnLDDy85KbFn0njwUKDFKufwNkh8ghloBCeg2EKwupVdBQtTj3DPGwf3CXmuBX4fp74In12j5E6",
 #     "grant_type":"password"
-#
+
 # }
 # Lấy user token

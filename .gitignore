@@ -75,7 +75,7 @@ docs/_build/
 target/
 
 # Jupyter Notebook
-.ipynb_checkpoints
+# .ipynb_checkpoints/
 
 # IPython
 profile_default/
@@ -85,13 +85,13 @@ ipython_config.py
 # .python-version
 
 # pipenv
-#Pipfile.lock
+# Pipfile.lock
 
 # UV
-#uv.lock
+# uv.lock
 
 # poetry
-#poetry.lock
+# poetry.lock
 
 # pdm
 .pdm.toml
@@ -110,7 +110,7 @@ celerybeat.pid
 
 # Environments
 .env
-.venv
+.venv/
 env/
 venv/
 ENV/
@@ -160,8 +160,16 @@ android/.gradle/
 android/app/build/
 android/app/src/main/assets/index.android.bundle
 ios/Pods/
-ios/.xcuserstate
 ios/build/
+ios/*.xcworkspace/
+ios/.xcuserstate
+
+# Metro Bundler cache
+.metro-bundler-cache/
+dist/
+
+# Jest snapshots (for testing)
+__snapshots__/
 
 # macOS
 .DS_Store
@@ -188,7 +196,6 @@ local.properties
 *.swp
 
 # JetBrains IDEs
-.idea/
 .idea_modules/
 
 # Optional: If you want to ignore test coverage reports (for example, with Jest)

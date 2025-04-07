@@ -13,7 +13,7 @@ export default StyleSheet.create({
         flexWrap:"wrap"
     }, m: {
         margin:5
-    }, padding : {
+    }, p : {
         padding: 5
     },avatar: {
         width:80,

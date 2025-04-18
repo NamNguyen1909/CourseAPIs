@@ -5,7 +5,7 @@ import Login from "./components/User/Login";
 import { Icon } from "react-native-paper";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Lesson from "./components/Home/Lesson";
-
+import Register from "./components/User/Register"
 
 //Tạo stack lồng trong tab navigator
 const Stack=createNativeStackNavigator();
@@ -22,7 +22,7 @@ const StackNavigator=() => {
 const Tab= createBottomTabNavigator();
 const TabNavigator=() => {
     return (
-        <Tab.Navigator screenOptions={{headerShown:false}}>
+        <Tab.Navigator screenOptions={{headerShown:true}}>
            <Tab.Screen 
               name="home" 
               component={StackNavigator} 
@@ -34,6 +34,13 @@ const TabNavigator=() => {
               component={Login} 
               options={{
                   title: "Đăng nhập",
+                  tabBarIcon: () => <Icon source="account" size={24} />
+              }}/>
+           <Tab.Screen 
+              name="register" 
+              component={Register} 
+              options={{
+                  title: "Đăng ký",
                   tabBarIcon: () => <Icon source="account" size={24} />
               }}/>
         </Tab.Navigator>
